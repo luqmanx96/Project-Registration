@@ -25,8 +25,8 @@ class Student(models.Model):
     adress_line_1 = models.CharField(max_length=100, null=True)
     adress_line_2 = models.CharField(max_length=100, null=True)
     poscode = models.CharField(max_length=5, null=True)
-    state = models.ForeignKey(State, on_delete=models.SET_NULL, null=True, default='Please Select')
-    city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True, default='Please Select')
+    state = models.ForeignKey(State, on_delete=models.SET_NULL, null=True)
+    city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True)
     contact_number = models.CharField(max_length=20, null=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
