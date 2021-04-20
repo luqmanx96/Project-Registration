@@ -18,6 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register', include('apps.registration.urls')),
+    path('', include('apps.registration.urls')), #add domain register/ later
 
 ]
