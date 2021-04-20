@@ -9,7 +9,7 @@ class State(models.Model):
 
 class City(models.Model):
     name = models.CharField(max_length=30)
-    state = models.ForeignKey(State, on_delete=models.CASCADE, default='')
+    state = models.ForeignKey(State, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -17,9 +17,9 @@ class City(models.Model):
 
 class Student(models.Model):
 
-    first_name = models.CharField(max_length=100, null=True)
+    first_name = models.CharField(max_length=100, null=True)             
     last_name = models.CharField(max_length=100, null=True)
-    # ic = models.CharField(max_length=15, help_text='Format 780506-10-4554.')
+    ic = models.CharField(max_length=15, help_text='Format 780506-10-4554.') 
     date_of_birth = models.DateField(default=None)
     email = models.EmailField(max_length=100, null=True)
     adress_line_1 = models.CharField(max_length=100, null=True)
@@ -32,3 +32,4 @@ class Student(models.Model):
 
     def __str__(self):
         return '%s %s' % (self.first_name, self.last_name)
+        
